@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+TODO
+    [] - Instalar Shadcn-ui
+    [] - Layout Inicial
+    [] - Criar services
+        [] - configurar OpenWeather
+        [] - service de geolocalizacao do usuario
+    [] - testes
+        [] - Jest
+        [] - Rtc
+        [] - Cypress
+    [] - Mapa
+    
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Você irá construir uma aplicação para consultar e trazer dados sobre o clima. É uma aplicação simples, onde terá um único campo de busca para o usuário digitar o nome da cidade, um botão para confirmar a busca e outro botão para consultar o clima do local do usuário.
+Ao clicar no botão de buscar pelo local do usuário, a aplicação deve utilizar a api de geolocalização padrão do navegador para pegar a localização do usuário, em seguida deve utilizar a api do Google Maps para consultar qual é o nome da cidade e por fim, deve utilizar a api OpenWeather para trazer as informações do clima e exibir elas na tela (temperatura, clima, umidade do ar e velocidade dos ventos, pode exibir outros dados a mais se quiser). Esse mesmo comportamento deve acontecer automaticamente ao carregar a página.
+No campo de busca o usuário deverá digitar o nome da cidade e ao clicar no botão buscar, deverá consultar diretamente a api OpenWeather e exibir os dados que
+encontrar ou, em caso de erro, exibir uma mensagem avisando de que não encontrou a cidade.
