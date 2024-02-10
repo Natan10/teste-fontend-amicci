@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Montserrat, Roboto_Mono } from "next/font/google";
 import { ThemeProvider } from "@/app/providers/theme-provider";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ 
+  weight: ['300', '400', '700'],
+  style: ['normal'],
+  subsets: ["latin"],
+  preload: true,
+  variable: '--font-montserrat'
+});
+
+const robotoMono = Roboto_Mono({
+  weight: ['300'],
+  style: ['normal'],
+  preload: true,
+  subsets: ["latin"],
+  variable: '--font-roboto-mono'
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${robotoMono.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
