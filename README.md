@@ -1,6 +1,7 @@
 TODO
     [] - Instalar Shadcn-ui
     [] - Layout Inicial
+        [] - Dark theme
     [] - Criar services
         [] - configurar OpenWeather
         [] - service de geolocalizacao do usuario
