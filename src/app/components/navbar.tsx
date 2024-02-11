@@ -1,22 +1,31 @@
+import { Dispatch, SetStateAction } from "react";
+import { FaMapMarker, FaSearch } from "react-icons/fa";
+import { usePathname, useRouter } from "next/navigation";
+
+import { AnimationCloud } from "@/app/components/animation-cloud";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { getUserWeatherByCity } from "@/services/get-user-weather-by-city";
-import { Dispatch, SetStateAction } from "react";
-import { CiCloudSun } from "react-icons/ci";
-import { FaSearch } from "react-icons/fa";
 
 type Props = {
   city: string | null;
+  isLoading: boolean;
   setCity: Dispatch<SetStateAction<string | null>>;
-  search: () => Promise<void>;
+  getUserLocation: () => Promise<void>;
 }
 
-export function Navbar({city, setCity, search}: Props) {
+export function Navbar({city, setCity, isLoading, getUserLocation}: Props) {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  function handleSearch() {
+    router.replace(`${pathname}?city=${city}`);
+  }
 
   return(
     <nav className="py-6 container flex items-center justify-between">
     <div className="flex items-center">
-      <CiCloudSun size={32} color="#003554" className="hidden md:block" />
+      {/* <CiCloudSun size={32} color="#003554" className="hidden md:block" /> */}
+      <AnimationCloud />
       <span className="font-bold text-sm md:text-lg text-titleSecondary">
         Check weather
       </span>
@@ -26,8 +35,21 @@ export function Navbar({city, setCity, search}: Props) {
         value={city || ''}
         onChange={v => setCity(v.target.value)}
       />
-      <Button size={'sm'} variant={'outline'} onClick={search} disabled={!city}>
+      <Button 
+        size={'sm'} 
+        variant={'outline'} 
+        onClick={() => handleSearch()} 
+        disabled={isLoading}
+      >
         <FaSearch size={16} />
+      </Button>
+      <Button 
+        size={'sm'} 
+        variant={'default'} 
+        onClick={getUserLocation} 
+        disabled={isLoading}
+      >
+        <FaMapMarker />
       </Button>
     </div>
   </nav>
