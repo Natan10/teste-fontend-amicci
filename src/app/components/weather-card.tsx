@@ -17,7 +17,7 @@ export function WeatherCard({data}: Props) {
 
   function getDescription(data: WeatherInfo['weather']){
     if(!data.length) return 'Sem descrição';
-    return weatherDescriptions[data[0].description as keyof typeof weatherDescriptions];
+    return weatherDescriptions[data[0].description as keyof typeof weatherDescriptions] || 'Descrição indisponível';
   }
 
   const url = getIconUrl(data.weather);
@@ -88,5 +88,45 @@ const weatherDescriptions = {
   'rain': 'chuva',
   'thunderstorm': 'tempestade',
   'snow': 'neve',
-  'mist': 'névoa'
+  'mist': 'névoa',
+  'light rain': 'chuva leve', 
+  'moderate rain': 'chuva moderada', 
+  'heavy intensity rain': 'chuva de forte intensidade', 
+  'very heavy rain': 'chuva muito forte', 
+  'extreme rain': 'chuva extrema', 
+  'freezing rain': 'chuva congelante', 
+  'light intensity shower rain': 'intensidade de luz chuveiro chuva', 
+  'heavy intensity shower rain': 'chuva forte', 
+  'ragged shower rain': 'chuva irregular', 
+  'thunderstorm with light rain': 'trovoada com chuva fraca',
+  'thunderstorm with rain': 'trovoada com chuva',
+  'thunderstorm with heavy rain': 'trovoada com chuva forte',
+  'light thunderstorm': 'tempestade leve',
+  'heavy thunderstorm': 'forte tempestade',
+  'ragged thunderstorm': 'tempestade irregular',
+  'thunderstorm with light drizzle': 'trovoada com leve garoa',
+  'thunderstorm with drizzle': 'trovoada com garoa',
+  'thunderstorm with heavy drizzle': 'trovoada com forte garoa',
+  'light intensity drizzle': 'chuvisco de intensidade luminosa',
+  'drizzle': 'chuvisco',
+  'heavy intensity drizzle': 'chuvisco de forte intensidade',
+  'light intensity drizzle rain': 'intensidade luminosa chuvisco chuva',
+  'drizzle rain': 'chuva torrencial',
+  'heavy intensity drizzle rain': 'chuva forte com garoa',
+  'shower rain and drizzle': 'chuva e garoa',
+  'heavy shower rain and drizzle': 'chuva forte e garoa',
+  'shower drizzle': 'chuvisco do chuveiro',
+  'light snow': 'neve fraca',
+  'heavy snow': 'neve intensa',
+  'sleet': 'aguaceiro com neve',
+  'light shower sleet': 'aguaceiro leve com neve',
+  'shower sleet': 'aguaceiro com neve',
+  'light rain and snow': 'chuva fraca e neve',
+  'rain and snow': 'chuva e neve',
+  'light shower snow': 'aguaceiro leve de neve',
+  'shower snow': 'aguaceiro de neve',
+  'heavy shower snow': 'aguaceiro intenso de neve',
+  'overcast clouds': 'nuvens nubladas',
 } as const;
+
+  
