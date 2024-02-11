@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Roboto_Mono } from "next/font/google";
 import { ThemeProvider } from "@/app/providers/theme-provider";
+import { ReactQueryProvider } from "./providers/react-query-provider";
 import "./globals.css";
 
 const montserrat = Montserrat({ 
@@ -32,15 +33,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${robotoMono.variable} ${montserrat.variable}`} suppressHydrationWarning>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-            {children}
-          </ThemeProvider>
-        </body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+            <ReactQueryProvider>
+                {children}
+            </ReactQueryProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
