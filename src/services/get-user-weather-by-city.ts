@@ -1,7 +1,6 @@
-import { client } from "@/infra/http/client";
+import { openWeatherClient } from "@/infra/http/open-weather";
 import { WeatherResponseDto } from "./dtos/weather-response-dto";
 
-// TODO: add zod
 type InputType = {
   city: string;
 };
@@ -10,7 +9,7 @@ export async function getUserWeatherByCity({ city }: InputType) {
   const params = new URLSearchParams();
   params.append("q", city);
   params.append("appid", process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY!);
-  const { data } = await client.get<WeatherResponseDto>(
+  const { data } = await openWeatherClient.get<WeatherResponseDto>(
     `/find?${params.toString()}`
   );
 
