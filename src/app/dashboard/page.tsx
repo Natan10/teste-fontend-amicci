@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { Navbar } from "@/app/components/navbar";
+import { Navbar } from "@/components/common/navbar";
 import { useWeatherInformationByCity } from "@/app/hooks/useWeatherInformationByCity";
-import { WeatherCard } from "@/app/components/weather-card";
-import { Load } from "@/app/components/load";
+import { WeatherCard } from "@/components/common/weather-card";
+import { Load } from "@/components/common/load";
 import { getUserCoordinates } from "@/services/get-user-coordinates";
-import { Container as Map } from "@/app/components/map/map-container";
+import { Container as Map } from "@/components/common/map/map-container";
 
 export default function Dashboard() {
   const router = useRouter();
