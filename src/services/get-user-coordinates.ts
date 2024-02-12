@@ -31,17 +31,19 @@ async function getUserCityByCoordinates(
   lng: number
 ): Promise<UserCityByCoordinatesData> {
   try {
-    const { data } = await apiRoutesClient.get(
+    const { data } = await apiRoutesClient.get<any>(
       `/user-location?lat=${lat}&lng=${lng}`
     );
+
     return {
       city: data.city,
       lat: lat,
       lng: lng,
     };
   } catch (err) {
-    throw err;
+    console.error(err);
+    throw new Error("Erro ao trazer o nome da cidade");
   }
 }
 
-export { getUserCoordinates };
+export { getUserCoordinates, getUserCityByCoordinates };

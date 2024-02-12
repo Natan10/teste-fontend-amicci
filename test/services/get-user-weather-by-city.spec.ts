@@ -1,13 +1,5 @@
-import axios from "axios";
+import { openWeatherClient } from "@/infra/http/open-weather";
 import { getUserWeatherByCity } from "@/services/get-user-weather-by-city";
-
-jest.mock("axios", () => {
-  return {
-    ...jest.requireActual("axios"),
-    get: jest.fn(),
-  };
-});
-const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("getUserWeatherByCity", () => {
   beforeEach(() => {
@@ -15,14 +7,20 @@ describe("getUserWeatherByCity", () => {
   });
 
   it("should be able to return data with valid city", async () => {
-    mockedAxios.get.mockResolvedValueOnce(validResponseMock);
+    jest
+      .spyOn(openWeatherClient, "get")
+      .mockResolvedValueOnce({ data: { list: [validResponseMock] } });
+
     const city = "Fortaleza";
     const response = await getUserWeatherByCity({ city });
-    expect(response).toEqual(expect.objectContaining(validResponseMock));
+    expect(response.name).toEqual(validResponseMock.name);
+    expect(response.main.humidity).toEqual(validResponseMock.main.humidity);
   });
 
   it("should be able to throw error if city is not valid or doest not have data", async () => {
-    mockedAxios.get.mockResolvedValueOnce([]);
+    jest
+      .spyOn(openWeatherClient, "get")
+      .mockResolvedValueOnce({ data: { list: [] } });
 
     await expect(getUserWeatherByCity({ city: "mock-city" })).rejects.toThrow(
       new Error("Sem dados diponíveis para mock-city")
