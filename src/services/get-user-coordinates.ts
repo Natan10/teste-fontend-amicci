@@ -4,14 +4,15 @@ async function getUserCoordinates() {
   if (!navigator.geolocation) {
     throw new Error("O Browser não possui suporte para geolocalização");
   } else {
-    return new Promise((res, _) => {
+    return new Promise((res, rej) => {
       return navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords;
-          const city = await getUserCityByCoordinates(latitude, longitude);
-          return res(city);
+          const data = await getUserCityByCoordinates(latitude, longitude);
+          return res(data);
         },
         (err) => {
+          rej();
           throw err;
         }
       );
@@ -19,12 +20,25 @@ async function getUserCoordinates() {
   }
 }
 
-async function getUserCityByCoordinates(lat: number, lng: number) {
+type UserCityByCoordinatesData = {
+  city: string;
+  lat: number;
+  lng: number;
+};
+
+async function getUserCityByCoordinates(
+  lat: number,
+  lng: number
+): Promise<UserCityByCoordinatesData> {
   try {
     const { data } = await apiRoutesClient.get(
       `/user-location?lat=${lat}&lng=${lng}`
     );
-    return data.city;
+    return {
+      city: data.city,
+      lat: lat,
+      lng: lng,
+    };
   } catch (err) {
     throw err;
   }

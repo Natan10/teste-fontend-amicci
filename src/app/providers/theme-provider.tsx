@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/sonner"
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider {...props}>{children}
-      <Toaster />
+      <Toaster richColors/>
     </NextThemesProvider>
   )
 }

@@ -23,7 +23,7 @@ export function WeatherCard({data}: Props) {
   const url = getIconUrl(data.weather);
 
   return(
-    <Card className='max-w-sm md:max-w-lg shadow-md animate-show-up'>
+    <Card className='absolute z-[1000] left-3 top-3 w-full max-w-sm md:max-w-lg shadow-md animate-show-up'>
       <CardHeader>
         <CardTitle>
           <Image 

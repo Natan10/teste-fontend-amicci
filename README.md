@@ -2,10 +2,10 @@ TODO
     [x] - Instalar Shadcn-ui
     [x] - Layout Inicial
         [] - Dark theme
-    [] - Criar services
+    [x] - Criar services
         [x] - configurar OpenWeather
-        [] - add react-query e zod
-        [] - service de geolocalizacao do usuario
+        [x] - add react-query
+        [x] - service de geolocalizacao do usuario
     [] - testes
         [] - Jest
         [] - Rtc

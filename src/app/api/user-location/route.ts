@@ -40,7 +40,6 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ city });
   } catch (err) {
-    console.error(err);
     return new Response("Erro ao pesquisar localização", { status: 400 });
   }
 }
