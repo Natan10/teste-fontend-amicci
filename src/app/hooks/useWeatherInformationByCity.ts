@@ -17,6 +17,7 @@ export function useWeatherInformationByCity({ city, setCity }: Props) {
       const response = await getUserWeatherByCity({
         city: city.toLocaleLowerCase(),
       });
+
       return {
         ...response,
         city,

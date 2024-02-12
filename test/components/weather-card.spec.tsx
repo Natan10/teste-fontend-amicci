@@ -1,5 +1,5 @@
 import { WeatherCard } from "@/components/common/weather-card";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 const cardMock = {
   id: 6320062,
