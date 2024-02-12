@@ -24,7 +24,7 @@ function LocationMarker() {
   );
 }
 
-export function Container({ children }: { children: ReactNode }) {
+export default function Map({ children }: { children: ReactNode }) {
   return (
     <div>
       <MapContainer
@@ -46,8 +46,4 @@ export function Container({ children }: { children: ReactNode }) {
       </MapContainer>
     </div>
   );
-}
-
-function useMapEvents(arg0: { click(): void; locationfound(e: any): void }) {
-  throw new Error("Function not implemented.");
 }
