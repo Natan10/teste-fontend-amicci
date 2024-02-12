@@ -10,7 +10,7 @@ import { WeatherInfo } from "@/domain/weather";
 import { Label } from "@/components/ui/label";
 
 type Props = {
-  data: WeatherInfo & { city: string };
+  data: WeatherInfo;
 };
 
 export function WeatherCard({ data }: Props) {
@@ -51,7 +51,7 @@ export function WeatherCard({ data }: Props) {
               Cidade
             </Label>
             <p data-testid="city" className="font-rmono text-sm text-title">
-              {data.city}
+              {data.name}
             </p>
           </div>
           <div className="grid grid-cols-2">

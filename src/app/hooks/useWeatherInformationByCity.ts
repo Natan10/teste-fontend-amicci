@@ -20,7 +20,6 @@ export function useWeatherInformationByCity({ city, setCity }: Props) {
 
       return {
         ...response,
-        city,
       };
     },
     refetchOnMount: false,
