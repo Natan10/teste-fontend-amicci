@@ -5,6 +5,7 @@ describe("getUserCityByCoordinates", () => {
   beforeAll(() => {
     jest.resetAllMocks();
   });
+  jest.spyOn(console, "error").mockImplementation(() => {});
 
   it("should be able to return city", async () => {
     const mockResponse = {

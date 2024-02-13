@@ -5,6 +5,7 @@ describe("getUserWeatherByCity", () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+  jest.spyOn(console, "error").mockImplementation(() => {});
 
   it("should be able to return data with valid city", async () => {
     jest
