@@ -1,26 +1,44 @@
-TODO
-    [x] - Instalar Shadcn-ui
-    [x] - Layout Inicial
-        [] - Dark theme
-    [x] - Criar services
-        [x] - configurar OpenWeather
-        [x] - add react-query
-        [x] - service de geolocalizacao do usuario
-    [] - testes
-        [] - Jest
-        [] - Rtc
-        [] - Cypress
-    [] - Mapa
+# Amicci Frontend Challenge
+
+Technologies:
+* Nextjs v14
+* React-Query v5
+* Jest
+* React testing library
+* Axios
+* TailwindCSS
+* Shadcn-ui 
+* React-Leaflet
+
+## TODOs
+
+* [x] - Instalar Shadcn-ui
+* [x] - Layout Inicial
+* [x] - Criar services
+  * [x] - Configurar OpenWeather
+  * [x] - Add react-query
+  * [x] - Service de geolocalizacao do usuario
+* [x] - Testes
+  * [x] - Jest
+  * [x] - Rtc
+* [x] - Mapa
     
 
-Você irá construir uma aplicação para consultar e trazer dados sobre o clima. É uma aplicação simples, onde terá um único campo de busca para o usuário digitar o nome da cidade, um botão para confirmar a busca e outro botão para consultar o clima do local do usuário.
-Ao clicar no botão de buscar pelo local do usuário, a aplicação deve utilizar a api de geolocalização padrão do navegador para pegar a localização do usuário, em seguida deve utilizar a api do Google Maps para consultar qual é o nome da cidade e por fim, deve utilizar a api OpenWeather para trazer as informações do clima e exibir elas na tela (temperatura, clima, umidade do ar e velocidade dos ventos, pode exibir outros dados a mais se quiser). Esse mesmo comportamento deve acontecer automaticamente ao carregar a página.
-No campo de busca o usuário deverá digitar o nome da cidade e ao clicar no botão buscar, deverá consultar diretamente a api OpenWeather e exibir os dados que
-encontrar ou, em caso de erro, exibir uma mensagem avisando de que não encontrou a cidade.
+## How to Run ?
 
-temperatura, 
-clima, 
-umidade do ar
-velocidade dos ventos,
+First install dependencies:
+```
+  npm install
+```
+
+After installing dependencies, run the project:
+```
+  npm run dev
+```
+
+For test run:
+```
+  npm run test or npm test 
+```
 
 

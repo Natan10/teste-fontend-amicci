@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 
 import { Navbar } from "@/components/common/navbar";
-import { useWeatherInformationByCity } from "@/app/hooks/useWeatherInformationByCity";
+import { useWeatherInformationByCity } from "@/hooks/useWeatherInformationByCity";
 import { WeatherCard } from "@/components/common/weather-card";
 import { Load } from "@/components/common/load";
 import { getUserCoordinates } from "@/services/get-user-coordinates";

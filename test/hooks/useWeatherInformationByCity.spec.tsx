@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { useRouter } from "next/navigation";
 import { getUserWeatherByCity } from "@/services/get-user-weather-by-city";
 import { renderHook } from "@testing-library/react-hooks";
-import { useWeatherInformationByCity } from "@/app/hooks/useWeatherInformationByCity";
+import { useWeatherInformationByCity } from "@/hooks/useWeatherInformationByCity";
 
 const queryClient = new QueryClient();
 const wrapper = ({ children }: { children: any }) => (

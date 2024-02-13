@@ -24,7 +24,6 @@ export function Navbar({ city, setCity, isLoading, getUserLocation }: Props) {
   return (
     <nav className="py-6 container flex items-center justify-between">
       <div className="flex items-center">
-        {/* <CiCloudSun size={32} color="#003554" className="hidden md:block" /> */}
         <AnimationCloud />
         <span className="font-bold text-sm md:text-lg text-titleSecondary">
           Check weather

@@ -3,8 +3,8 @@
 import { Suspense } from "react";
 import { Montserrat, Roboto_Mono } from "next/font/google";
 
-import { ThemeProvider } from "@/app/providers/theme-provider";
-import { ReactQueryProvider } from "./providers/react-query-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { ReactQueryProvider } from "../providers/react-query-provider";
 import { Load } from "@/components/common/load";
 import "./globals.css";
 
